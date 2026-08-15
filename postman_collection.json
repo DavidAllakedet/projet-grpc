@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "gRPC Product Service",
+    "_postman_id": "grpc-product-001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "grpc_server",
+      "value": "localhost:9090",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "GetProduct",
+      "protocolProfileBehavior": {
+        "grpc": {
+          "serverURL": "{{grpc_server}}",
+          "service": "product.ProductService",
+          "method": "GetProduct",
+          "serializationFormat": "protobuf",
+          "compression": "no"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1\n}"
+        },
+        "url": {
+          "raw": "{{grpc_server}}/product.ProductService/GetProduct"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListProducts",
+      "protocolProfileBehavior": {
+        "grpc": {
+          "serverURL": "{{grpc_server}}",
+          "service": "product.ProductService",
+          "method": "ListProducts",
+          "serializationFormat": "protobuf",
+          "compression": "no"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {
+          "raw": "{{grpc_server}}/product.ProductService/ListProducts"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateProduct",
+      "protocolProfileBehavior": {
+        "grpc": {
+          "serverURL": "{{grpc_server}}",
+          "service": "product.ProductService",
+          "method": "CreateProduct",
+          "serializationFormat": "protobuf",
+          "compression": "no"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ecran 4K\",\n  \"description\": \"Moniteur 27 pouces\",\n  \"price\": 399.99,\n  \"category\": \"Informatique\",\n  \"in_stock\": true\n}"
+        },
+        "url": {
+          "raw": "{{grpc_server}}/product.ProductService/CreateProduct"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteProduct",
+      "protocolProfileBehavior": {
+        "grpc": {
+          "serverURL": "{{grpc_server}}",
+          "service": "product.ProductService",
+          "method": "DeleteProduct",
+          "serializationFormat": "protobuf",
+          "compression": "no"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 7\n}"
+        },
+        "url": {
+          "raw": "{{grpc_server}}/product.ProductService/DeleteProduct"
+        }
+      },
+      "response": []
+    }
+  ]
+}
